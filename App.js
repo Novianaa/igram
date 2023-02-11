@@ -1,111 +1,57 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, { useEffect } from 'react';
+import { ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './src/screens/Home'
+import ExplorerScreen from './src/screens/Explorer';
+import ShopScreen from './src/screens/Shop';
+import ProfileScreen from './src/screens/Profile';
+import Ionic from 'react-native-vector-icons/Ionicons';
+import SplashScreen from 'react-native-splash-screen';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({ children, title }: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function App() {
+  const Tab = createBottomTabNavigator()
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={({ route }) => ({
+        tabBarShowLabel: false,
+        headerShown: false,
+        tabBarStyle: {
+          height: 50,
+        },
+
+        tabBarIcon: ({ focused, size, colour }) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+            size = focused ? size + 5 : size + 2;
+          } else if (route.name === 'Explorer') {
+            iconName = focused ? 'md-search' : 'ios-search-outline';
+            size = focused ? size + 5 : size + 2;
+
+          } else if (route.name === 'Shop') {
+            iconName = focused ? 'basket' : 'basket-outline';
+            size = focused ? size + 6 : size + 3;
+
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'ios-person-circle' : 'ios-person-outline';
+            size = focused ? size + 5 : size + 2;
+
+          }
+
+          return <Ionic name={iconName} size={size} color={'#1e1e1e'} />;
+        },
+      })}>
+        <Tab.Screen name='Home' component={HomeScreen} />
+        <Tab.Screen name='Explorer' component={ExplorerScreen} />
+        <Tab.Screen name='Shop' component={ShopScreen} />
+        <Tab.Screen name='Profile' component={ProfileScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
