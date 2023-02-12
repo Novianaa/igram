@@ -47,7 +47,6 @@ function ButtomTab() {
       <Tab.Screen name='Shop' component={ShopScreen} />
       <Tab.Screen name='Profile' component={ProfileScreen} />
     </Tab.Navigator>
-
   );
 }
 function App() {

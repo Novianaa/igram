@@ -9,7 +9,8 @@ export const ListsUser = [
     link: 'https://instagram.com/p/6zay6yBWhr/media/?size=l',
     like: 202,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/2226bd88ebd24197b0b9b9f0300eb97a_323273049_3347546592239998_3295446833867604172_n.jpg'),
@@ -21,7 +22,8 @@ export const ListsUser = [
     link: 'https://instagram.com/p/6zeBG2H1oH/media/?size=l',
     like: 102,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/329874780_2428912853938388_4987631040647698535_n.jpg'),
@@ -33,7 +35,8 @@ export const ListsUser = [
     link: 'https://instagram.com/p/6ze2yyi4eV/media/?size=l',
     like: 302,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/E6kuc-QUYAEuxEr.jpeg'),
@@ -45,7 +48,8 @@ export const ListsUser = [
     link: 'https://instagram.com/p/6zS1b4OLoe/media/?size=l',
     like: 402,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/310820410_182950360968401_5015515283591701260_n.jpg'),
@@ -57,7 +61,8 @@ export const ListsUser = [
     link: 'https://www.instagram.com/p/Cn0qSiojnu6/media/?size=l',
     like: 802,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/327291951_1293688894525441_1841313827260023074_n.jpg'),
@@ -69,7 +74,8 @@ export const ListsUser = [
     link: 'https://www.instagram.com/p/Cn4iDruJ0XV/media/?size=l',
     like: 602,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
   {
     profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
@@ -81,11 +87,12 @@ export const ListsUser = [
     link: 'https://www.instagram.com/p/CjDAVdkvWX1/media/?size=l',
     like: 502,
     isLiked: false,
-    isSaved: false
+    isSaved: false,
+    comment: []
   },
 ]
 
-export const Story = [
+export const ListsStory = [
   {
     username: 'Your Story',
     photo: require('../assets/images/IMG_20221021_204303_408.jpg'),
