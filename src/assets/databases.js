@@ -10,7 +10,11 @@ export const ListsUser = [
     like: 202,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [{
+      username: 'nov__',
+      profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+      text: "wow"
+    }]
   },
   {
     profile_picture: require('../assets/images/2226bd88ebd24197b0b9b9f0300eb97a_323273049_3347546592239998_3295446833867604172_n.jpg'),
@@ -23,7 +27,11 @@ export const ListsUser = [
     like: 102,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [{
+      username: 'nov__',
+      profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+      text: "hihi"
+    }]
   },
   {
     profile_picture: require('../assets/images/329874780_2428912853938388_4987631040647698535_n.jpg'),
@@ -36,7 +44,11 @@ export const ListsUser = [
     like: 302,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [{
+      username: 'nov__',
+      profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+      text: "gogo"
+    }]
   },
   {
     profile_picture: require('../assets/images/E6kuc-QUYAEuxEr.jpeg'),
@@ -49,7 +61,11 @@ export const ListsUser = [
     like: 402,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [{
+      username: 'nov__',
+      profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+      text: "beautiful"
+    }]
   },
   {
     profile_picture: require('../assets/images/310820410_182950360968401_5015515283591701260_n.jpg'),
@@ -62,7 +78,13 @@ export const ListsUser = [
     like: 802,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [
+      {
+        username: 'nov__',
+        profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+        text: "yes"
+      }
+    ]
   },
   {
     profile_picture: require('../assets/images/327291951_1293688894525441_1841313827260023074_n.jpg'),
@@ -75,7 +97,13 @@ export const ListsUser = [
     like: 602,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [
+      {
+        username: 'nov__',
+        profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
+        text: "let's go"
+      }
+    ]
   },
   {
     profile_picture: require('../assets/images/ba502a3f85a94a1e898feef1643da5a6_323898875_549405620541841_2334237951413811008_n.jpg'),
@@ -88,7 +116,13 @@ export const ListsUser = [
     like: 502,
     isLiked: false,
     isSaved: false,
-    comment: []
+    comment: [
+      {
+        username: 'hai_kall',
+        profile_picture: require('../assets/images/327291951_1293688894525441_1841313827260023074_n.jpg'),
+        text: 'mangosteen'
+      }
+    ]
   },
 ]
 

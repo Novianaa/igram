@@ -11,7 +11,7 @@ const Posts = () => {
   let del = data.data?.slice(0, -1)
 
   return (
-    <ScrollView style={{ marginBottom: '20%' }}>
+    <ScrollView style={{ marginBottom: '15%' }}>
       {ListsUser.map((user, index) => {
         const [like, setLike] = useState(user.isLiked)
         const [save, setSave] = useState(user.isSaved)
@@ -62,26 +62,34 @@ const Posts = () => {
               </TouchableOpacity>
             </View>
             <Text style={{ fontSize: 16, marginHorizontal: '3%', marginVertical: '1%', color: '#1e1e1e', fontWeight: 'bold' }}>{like ? `${user.like + 1}` : `${user.like}`} Likes</Text>
-            <View>
-              <Text style={{ fontSize: 16, marginHorizontal: '3%', color: '#1e1e1e' }}>
+            <View >
+              <Text style={{ fontSize: 16, marginHorizontal: '3%', color: '#1e1e1e', }}>
                 <Link to={{ screen: '#' }} style={{ fontSize: 16, fontWeight: 'bold', marginLeft: '2%', color: '#1e1e1e', marginRight: '2%' }}>{user.username} </Link> {user.caption.text}
               </Text>
-              <Text style={{ color: '#1e1e1e', marginLeft: '3%', marginTop: '1%', }}>{comment}</Text>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '95%' }}>
+              <Text style={{ marginHorizontal: '3%', marginVertical: '1%', }}>Comments</Text>
+              {user.comment?.map((txt, index) => {
+                return (
+                  <View key={index} style={{ flexDirection: 'row', marginHorizontal: '3%', marginVertical: '1%', alignItems: 'center' }}>
+                    <Text Text style={{ fontWeight: 'bold' }}>{txt.username}</Text>
+                    <Text style={{ marginLeft: '3%', }}>{txt.text}</Text>
+                  </View>
+                )
+              })}
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginHorizontal: '3%', }}>
                 <TextInput
                   placeholder="Add your comment"
                   onChangeText={text => setComment(text)}
-                  style={{ marginHorizontal: '3%', color: '#1e1e1e', fontSize: 15 }}
+                  style={{ color: '#1e1e1e', fontSize: 15 }}
                 />
                 <TouchableOpacity onPress={handleSumbit}>
                   <Text>Post</Text>
                 </TouchableOpacity>
               </View>
             </View>
-          </View>
+          </View >
         )
       })}
-    </ScrollView>
+    </ScrollView >
   )
 }
 

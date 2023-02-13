@@ -1,4 +1,4 @@
-import { View, Text, Animated, StatusBar, Image, TouchableOpacity, TextInput, Button, Pressable } from 'react-native'
+import { View, Text, StatusBar, Image, TouchableOpacity, TextInput, Button, Pressable } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Feather from 'react-native-vector-icons/Feather';
@@ -12,7 +12,7 @@ const Story = ({ route, navigation }) => {
           justifyContent: 'center', alignItems: 'center', zIndex: 2
         }}>
           <View style={{
-            width: '95%', height: 3, backgroundColor: '#e6e2e298', top: 15, position: 'absolute',
+            width: '95%', height: 2, backgroundColor: '#e6e2e298', top: 15, position: 'absolute',
           }}></View>
           <View
             style={{
