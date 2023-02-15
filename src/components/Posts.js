@@ -1,18 +1,16 @@
 import { View, Text, ScrollView, FlatList, Image, TouchableOpacity, TextInput, TouchableHighlight, Pressable, Share, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { ListsUser } from '../assets/databases'
+import { ListsUser, dataPosts } from '../assets/databases'
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import { Link } from '@react-navigation/native';
 
 const Posts = () => {
-  const [data, setData] = useState({})
-  let del = data.data?.slice(0, -1)
-
+  const data = dataPosts._z?.data
   return (
     <ScrollView style={{ marginBottom: '15%' }}>
-      {ListsUser.map((user, index) => {
+      {data?.map((user, index) => {
         const [like, setLike] = useState(user.isLiked)
         const [save, setSave] = useState(user.isSaved)
         const [comment, setComment] = useState(user.comment)
@@ -35,13 +33,13 @@ const Posts = () => {
               console.log(result.action === Share.dismissedAction)
             }
           } catch (error) {
-            Alert.alert(error.message);
+            Alert.alert(error.message)
           }
-        };
+        }
         return (
           <View key={index}>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: '3%', marginVertical: '2%' }}>
-              <Image source={user.profile_picture} style={{ width: 30, height: 30, borderRadius: 50 }} />
+              <Image source={user.photo_profile} style={{ width: 30, height: 30, borderRadius: 50 }} />
               <Text style={{ fontSize: 19, fontWeight: '500', marginLeft: '3%', color: '#1e1e1e' }}>{user.username}</Text>
             </View>
             <View>
@@ -89,6 +87,7 @@ const Posts = () => {
           </View >
         )
       })}
+
     </ScrollView >
   )
 }

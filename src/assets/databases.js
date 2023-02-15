@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const ListsUser = [
   {
     profile_picture: require('../assets/images/f91da15a5651ac901521e39c4130140c.jpg'),
@@ -157,6 +159,6 @@ export const ListsStory = [
     photo: require('../assets/images/Chanhaechan.jpg'),
     profile_picture: require('../assets/images/image0.jpg'),
   },
-
-
 ]
+
+export const dataPosts = axios.get('https://63ec3e8931ef61473b1f4c8a.mockapi.io/posts')
